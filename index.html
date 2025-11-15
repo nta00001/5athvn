@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5ATHVN Memories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0A2540",
+              accent: "#FF6B00",
+              "primary-story": "#13a4ec",
+              "background-light": "#F5F5F7",
+              "background-dark": "#101c22",
+              "text-light": "#1E1E1E",
+              "text-dark": "#F5F5F7",
+              "card-light": "#FFFFFF",
+              "card-dark": "#1a2a33",
+              "border-light": "#dbe2e6",
+              "border-dark": "#2c3e4a",
+              "subtext-light": "#617c89",
+              "subtext-dark": "#a0b3bd",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .masonry-grid {
+          column-count: 2;
+          column-gap: 1.5rem;
+      }
+      @media (min-width: 768px) {
+          .masonry-grid {
+              column-count: 3;
+          }
+      }
+      @media (min-width: 1024px) {
+          .masonry-grid {
+              column-count: 4;
+          }
+      }
+      .masonry-grid > div {
+          break-inside: avoid;
+          margin-bottom: 1.5rem;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

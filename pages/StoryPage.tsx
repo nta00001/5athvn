@@ -5,8 +5,13 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { timelineEvents } from '../constants';
 import type { TimelineEvent } from '../types';
+import { AdvancedImage } from '@cloudinary/react';
+import { useCloudinary } from '../components/CloudinaryProvider';
 
 const TimelineItem: React.FC<{ event: TimelineEvent; isReversed: boolean }> = ({ event, isReversed }) => {
+    const { cloudinary } = useCloudinary();
+    const timelineImage = cloudinary.image(event.publicId);
+
     const content = (
         <>
             <p className="text-gray-500 dark:text-gray-400 text-sm font-medium mb-1">{event.date}</p>
@@ -16,7 +21,7 @@ const TimelineItem: React.FC<{ event: TimelineEvent; isReversed: boolean }> = ({
     );
 
     const image = (
-        <img alt={event.imgAlt} className="w-full h-auto object-cover rounded-xl shadow-lg aspect-[4/3]" src={event.imgSrc} />
+        <AdvancedImage cldImg={timelineImage} alt={event.imgAlt} className="w-full h-auto object-cover rounded-xl shadow-lg aspect-[4/3]" />
     );
     
     return (

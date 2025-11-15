@@ -3,8 +3,11 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { galleryImages } from '../constants';
+import { AdvancedImage } from '@cloudinary/react';
+import { useCloudinary } from '../components/CloudinaryProvider';
 
 const GalleryPage: React.FC = () => {
+    const { cloudinary } = useCloudinary();
     return (
         <div className="relative flex min-h-screen w-full flex-col text-[#111618] dark:text-gray-200">
              <Header variant="opaque" activePage="gallery" />
@@ -17,7 +20,7 @@ const GalleryPage: React.FC = () => {
                     <div className="masonry-grid">
                         {galleryImages.map((image, index) => (
                             <div key={index}>
-                                <img alt={image.alt} className="rounded-xl w-full h-auto object-cover" src={image.src} />
+                                <AdvancedImage cldImg={cloudinary.image(image.publicId)} alt={image.alt} className="rounded-xl w-full h-auto object-cover" />
                             </div>
                         ))}
                     </div>

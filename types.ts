@@ -1,6 +1,6 @@
 
 export interface GalleryImage {
-  src: string;
+  publicId: string;
   alt: string;
 }
 
@@ -8,6 +8,6 @@ export interface TimelineEvent {
   date: string;
   title: string;
   description: string;
-  imgSrc: string;
+  publicId: string;
   imgAlt: string;
 }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+
 const HomePage: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -31,11 +32,11 @@ const HomePage: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="w-full bg-background-light dark:bg-background-dark py-16 sm:py-24" id="memories">
-                    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex flex-col items-center gap-8 text-center">
+                <section className="w-full bg-background-light dark:bg-background-dark py-12 sm:py-16 md:py-24" id="memories">
+                    <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
+                        <div className="flex flex-col items-center gap-6 sm:gap-8 text-center">
                             <div className="flex flex-col gap-3">
-                                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Hành Trình Của Chúng Ta</h2>
+                                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Hành Trình Của Chúng Ta</h2>
                                 <p className="text-subtext-light dark:text-subtext-dark text-base sm:text-lg leading-relaxed max-w-2xl">Mỗi khoảnh khắc là một mảnh ghép tạo nên câu chuyện đầy màu sắc của 5ATHVN. Cùng lật lại những trang ký ức đẹp nhất nhé!</p>
                             </div>
                             <Link to="/gallery" className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-accent text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
@@ -46,14 +47,14 @@ const HomePage: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="w-full py-16 sm:py-24" id="story">
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <section className="w-full py-12 sm:py-16 md:py-24" id="story">
+                    <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10">
                         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
                             <div className="lg:w-1/2">
-                                <img alt="A candid photo of the 5ATHVN group laughing together." className="rounded-xl shadow-lg w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM8jMHcsnAcApliytz3I1tszt8RivIxfVz_DPB2W0PCFhXepw7eZbEUd9jOTqrQR3wA9Pw5za_3FXU-HAgIXLiOMp9DNkKMZBj42rvA2kihm1kbPlu6T1bJalevv2yI4CycsclnvyqpQpRQ3j4zui-ouu_EnnG1MQVwG0ifLwEYyjF-aLhx46fDi_IhjPsQZtQEBnSazpRLOhCkdsA4nvxgKltZ5JBSmQATaIEGmClcLgxsmBBM8_-znJ2owGOCYaYRsxrMpHfxRs" />
+                                <p>placeholder</p>
                             </div>
                             <div className="lg:w-1/2 flex flex-col gap-4">
-                                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Câu chuyện 5ATHVN</h2>
+                                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Câu chuyện 5ATHVN</h2>
                                 <p className="text-subtext-light dark:text-subtext-dark text-base sm:text-lg leading-relaxed">5ATHVN không chỉ là một cái tên, mà là một gia đình được tạo nên từ những mảnh ghép cá tính, chung một nhịp đập và đam mê. Chúng tớ đã cùng nhau đi qua những ngày tháng sinh viên đáng nhớ, từ những buổi học căng thẳng đến những chuyến đi phượt ngẫu hứng, từ những lần ăn mừng chiến thắng nhỏ nhoi đến việc an ủi nhau lúc thất bại.</p>
                                 <p className="text-subtext-light dark:text-subtext-dark text-base sm:text-lg leading-relaxed">Mỗi thành viên là một màu sắc riêng, nhưng khi ở bên nhau, chúng tớ tạo nên một bức tranh hoàn chỉnh - rực rỡ và sống động. Đây là nơi chúng tớ lưu giữ tất cả, để mai sau nhìn lại, thanh xuân vẫn vẹn nguyên như ngày đầu.</p>
                             </div>
@@ -61,10 +62,10 @@ const HomePage: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="w-full bg-card-light dark:bg-card-dark py-16 sm:py-24" id="contact">
-                    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <section className="w-full bg-card-light dark:bg-card-dark py-12 sm:py-16 md:py-24" id="contact">
+                    <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
                         <div className="flex flex-col items-center gap-4">
-                            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Theo Dõi Chúng Tớ</h2>
+                            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Theo Dõi Chúng Tớ</h2>
                             <p className="text-subtext-light dark:text-subtext-dark text-base sm:text-lg leading-relaxed max-w-2xl">Đừng bỏ lỡ bất kỳ khoảnh khắc nào! Kết nối với 5ATHVN trên các mạng xã hội để cập nhật những câu chuyện mới nhất nhé.</p>
                             <div className="flex items-center gap-6 mt-4">
                                 <a className="text-subtext-light dark:text-subtext-dark hover:text-accent transition-colors" href="#"><svg aria-hidden="true" className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path clipRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fillRule="evenodd"></path></svg></a>

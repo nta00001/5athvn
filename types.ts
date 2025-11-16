@@ -1,13 +1,14 @@
 
 export interface GalleryImage {
-  publicId: string;
-  alt: string;
+  fileId: string;
+  name: string;
+  url: string;
 }
 
 export interface TimelineEvent {
   date: string;
   title: string;
   description: string;
-  publicId: string;
+  imageUrl: string;
   imgAlt: string;
 }

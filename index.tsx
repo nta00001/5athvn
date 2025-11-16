@@ -2,7 +2,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { CloudinaryProvider } from './components/CloudinaryProvider';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -12,8 +11,6 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <CloudinaryProvider>
-      <App />
-    </CloudinaryProvider>
+    <App />
   </React.StrictMode>
 );

@@ -9,17 +9,47 @@ import "yet-another-react-lightbox/styles.css";
 
 const GalleryPage: React.FC = () => {
     const [images, setImages] = useState<GalleryImage[]>([]);
+    const [folders, setFolders] = useState<{name: string, path: string}[]>([]);
+    const [selectedFolder, setSelectedFolder] = useState<string>('/');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     const [open, setOpen] = useState(false);
     const [index, setIndex] = useState(0);
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
     useEffect(() => {
-        const fetchImages = async () => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const fetchFolders = async () => {
+            try {
+                const res = await fetch('/api/get-folders');
+                if (!res.ok) {
+                    throw new Error(`Failed to fetch: ${res.statusText}`);
+                }
+                const data = await res.json();
+                setFolders(data.folders);
+            } catch (err: any) {
+                console.error('Error fetching folders:', err);
+            }
+        };
+
+        fetchFolders();
+    }, []);
+
+    useEffect(() => {
+        const fetchImages = async (folder: string) => {
             try {
                 setLoading(true);
-                const res = await fetch('/api/get-images');
+                const url = folder === '/' ? '/api/get-images' : `/api/get-images?folder=${folder}`;
+                const res = await fetch(url);
                 if (!res.ok) {
                     throw new Error(`Failed to fetch: ${res.statusText}`);
                 }
@@ -29,13 +59,14 @@ const GalleryPage: React.FC = () => {
             } catch (err: any) {
                 setError(err.message);
                 console.error(err);
-            } finally {
+            }
+        finally {
                 setLoading(false);
             }
         };
 
-        fetchImages();
-    }, []);
+        fetchImages(selectedFolder);
+    }, [selectedFolder]);
 
     const slides = images.map((image) => ({
         src: image.url,
@@ -46,6 +77,9 @@ const GalleryPage: React.FC = () => {
         setOpen(true);
     };
 
+    const activeButtonStyle = "bg-primary-story text-white";
+    const inactiveButtonStyle = "bg-gray-200 text-gray-700 hover:bg-gray-300";
+
     return (
         <div className="relative flex min-h-screen w-full flex-col text-[#111618] dark:text-gray-200">
             <Header variant="opaque" activePage="gallery" />
@@ -54,6 +88,14 @@ const GalleryPage: React.FC = () => {
                     <div className="flex flex-col items-center text-center gap-2">
                         <p className="text-4xl font-black leading-tight tracking-[-0.033em] text-[#111618] dark:text-white">Thư viện Kỷ niệm</p>
                         <p className="text-base font-normal leading-normal text-gray-500 dark:text-gray-400 max-w-xl">Cùng nhìn lại những khoảnh khắc đáng nhớ của 5ATHVN qua từng bức ảnh. Đây là nơi lưu giữ những kỷ niệm vui vẻ, những chuyến đi và sự kiện đã gắn kết chúng ta.</p>
+                    </div>
+
+                    <div className="flex justify-center flex-wrap gap-4 mb-8">
+                        {folders.map((folder) => (
+                            <button key={folder.path} onClick={() => setSelectedFolder(folder.path)} className={`px-4 py-2 rounded-full font-semibold transition-colors ${selectedFolder === folder.path ? activeButtonStyle : inactiveButtonStyle}`}>
+                                {folder.name}
+                            </button>
+                        ))}
                     </div>
 
                     {loading && <div className="text-center">Đang tải thư viện ảnh...</div>}

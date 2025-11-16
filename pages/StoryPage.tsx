@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -30,6 +30,16 @@ const TimelineItem: React.FC<{ event: TimelineEvent; isReversed: boolean }> = ({
 };
 
 const StoryPage: React.FC = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <div className="relative flex h-auto min-h-screen w-full flex-col text-[#111618] dark:text-gray-100">
             <Header variant="opaque" activePage="story" />

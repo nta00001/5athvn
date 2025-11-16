@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import HeroImage from '../asset/430629486_934969994661088_1536439897098959619_n.jpg';
+import StorySectionImage from '../asset/387627692_868867708110514_2760425483494268781_n_l78g4x.jpg';
 
 
 const HomePage: React.FC = () => {
@@ -52,7 +53,7 @@ const HomePage: React.FC = () => {
                     <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10">
                         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
                             <div className="lg:w-1/2">
-                                <p>placeholder</p>
+                                <img src={StorySectionImage} alt="A handwritten note about 5ATHVN" className="rounded-lg shadow-lg w-full h-auto object-cover" />
                             </div>
                             <div className="lg:w-1/2 flex flex-col gap-4">
                                 <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Câu chuyện 5ATHVN</h2>

@@ -10,7 +10,6 @@ import { useCloudinary } from '../components/CloudinaryProvider';
 
 const TimelineItem: React.FC<{ event: TimelineEvent; isReversed: boolean }> = ({ event, isReversed }) => {
     const { cloudinary } = useCloudinary();
-    const timelineImage = cloudinary.image(event.publicId);
 
     const content = (
         <>
@@ -20,9 +19,13 @@ const TimelineItem: React.FC<{ event: TimelineEvent; isReversed: boolean }> = ({
         </>
     );
 
-    const image = (
-        <AdvancedImage cldImg={timelineImage} alt={event.imgAlt} className="w-full h-auto object-cover rounded-xl shadow-lg aspect-[4/3]" />
-    );
+    let image;
+    if (event.publicId.includes('asset')) {
+        image = <img src={event.publicId} alt={event.imgAlt} className="w-full h-auto object-cover rounded-xl shadow-lg aspect-[4/3]" />;
+    } else {
+        const timelineImage = cloudinary.image(event.publicId);
+        image = <AdvancedImage cldImg={timelineImage} alt={event.imgAlt} className="w-full h-auto object-cover rounded-xl shadow-lg aspect-[4/3]" />;
+    }
     
     return (
         <div className="grid md:grid-cols-[1fr_auto_1fr] gap-x-12 items-start">

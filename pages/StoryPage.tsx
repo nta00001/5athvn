@@ -43,8 +43,8 @@ const StoryPage: React.FC = () => {
     return (
         <div className="relative flex h-auto min-h-screen w-full flex-col text-[#111618] dark:text-gray-100">
             <Header variant="opaque" activePage="story" />
-            <main className="flex flex-1 justify-center py-5">
-                <div className="layout-content-container flex flex-col max-w-4xl flex-1 px-4 sm:px-6 lg:px-8">
+            <main className="flex flex-1 justify-center">
+                <div className="layout-content-container flex flex-col max-w-4xl flex-1 px-4 sm:px-6 lg:px-8 mt-16">
                     <div className="text-center mb-12">
                         <h1 className="text-primary-story font-bold text-base uppercase tracking-wider mb-2">Our Story</h1>
                         <h2 className="text-[#111618] dark:text-white text-4xl sm:text-5xl font-extrabold leading-tight tracking-tighter">Hành Trình Của 5ATHVN</h2>

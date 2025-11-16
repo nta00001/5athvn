@@ -19,10 +19,10 @@ export const galleryImages: GalleryImage[] = [
 export const timelineEvents: TimelineEvent[] = [
     {
         date: "Tháng 5, 2023",
-        title: "Khởi Đầu Tình Cờ",
+        title: "Ngày mọi chuyện bắt đầu",
         description: "Mọi thứ bắt đầu từ một buổi đi xin việc trên 189 Hoàng Cầu. Những con người có cùng \"tần số\" đã xin việc cùng nhau và gặp nhau, và mọi chuyện bắt đầu.",
         publicId: timeline0,
-        imgAlt: "The first photo of the group"
+        imgAlt: "minh hoạ tí thôi hehehe"
     },
     {
         date: "Tháng 5, 2021",

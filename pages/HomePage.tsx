@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import HeroImage from '../asset/430629486_934969994661088_1536439897098959619_n.jpg';
 
 
 const HomePage: React.FC = () => {
@@ -21,7 +22,7 @@ const HomePage: React.FC = () => {
             <Header variant={isScrolled ? 'opaque' : 'transparent'} activePage="home" />
             <main className="flex flex-col">
                 <section className="relative w-full h-screen" id="hero">
-                    <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuD48sRCLHrmB-6x9G-HBjr5l_EKM6YJpu2kmsg_2tu2fygId3ut3YPg-iQqc9I-wFeki1qxNHQEi5VTyAFCPIQtkRhXxcFd7nN425xCOKuUbo6Pp6ftI9X5jMpyVDQkbGJ8SjxJxUW2fI_Io_XebGsVmafhJvaH0oPTqggeKqSP4hDmh_DU0DPktfk-jmA3nu6U71WIVj10vQtr6iNml9tXYeUNp9bFNN8-bbSpyFFvcBZV_hdPbGpkp9KaiPJYPONyq5umfzQOdgQ")` }}>
+                    <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: `url(${HeroImage})` }}>
                         <div className="absolute inset-0 bg-black/60"></div>
                     </div>
                     <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
@@ -55,7 +56,7 @@ const HomePage: React.FC = () => {
                             </div>
                             <div className="lg:w-1/2 flex flex-col gap-4">
                                 <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Câu chuyện 5ATHVN</h2>
-                                <p className="text-subtext-light dark:text-subtext-dark text-base sm:text-lg leading-relaxed">5ATHVN không chỉ là một cái tên, mà là một gia đình được tạo nên từ những mảnh ghép cá tính, chung một nhịp đập và đam mê. Chúng tớ đã cùng nhau đi qua những ngày tháng sinh viên đáng nhớ, từ những buổi học căng thẳng đến những chuyến đi phượt ngẫu hứng, từ những lần ăn mừng chiến thắng nhỏ nhoi đến việc an ủi nhau lúc thất bại.</p>
+                                <p className="text-subtext-light dark:text-subtext-dark text-base sm:text-lg leading-relaxed">5ATHVN không chỉ là một cái tên, mà là một gia đình được tạo nên từ những mảnh ghép cá tính, chung một nhịp đập và đam mê. Chúng tớ đã cùng nhau đi qua những ngày tháng sinh viên đáng nhớ, từ những buổi làm ma căng thẳng đến những chuyến đi chơi ngẫu hứng, từ những lần bị trừ tiền cùng nhau đến việc nghỉ cùng 1 thời điểm.</p>
                                 <p className="text-subtext-light dark:text-subtext-dark text-base sm:text-lg leading-relaxed">Mỗi thành viên là một màu sắc riêng, nhưng khi ở bên nhau, chúng tớ tạo nên một bức tranh hoàn chỉnh - rực rỡ và sống động. Đây là nơi chúng tớ lưu giữ tất cả, để mai sau nhìn lại, thanh xuân vẫn vẹn nguyên như ngày đầu.</p>
                             </div>
                         </div>

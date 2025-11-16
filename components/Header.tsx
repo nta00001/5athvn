@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ variant, activePage }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const isTransparent = variant === 'transparent' && !isMenuOpen;
 
-    const headerClasses = `fixed md:sticky top-0 z-50 w-full transition-colors duration-300 ${isTransparent ? 'bg-transparent text-white' : 'bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800'}`;
+    const headerClasses = `fixed top-0 z-50 w-full transition-colors duration-300 ${isTransparent ? 'bg-transparent text-white' : 'bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800'}`;
     const navTextColor = isTransparent ? 'text-white' : 'text-gray-600 dark:text-gray-300';
     const activeTextColor = isTransparent ? 'text-white font-bold' : 'text-primary-story font-bold';
     const logoTextColor = isTransparent ? 'text-white' : 'text-primary-story';

@@ -1,4 +1,5 @@
 import type { GalleryImage, TimelineEvent } from './types';
+import timeline0 from './asset/428125828_1653776875374271_3708185755130500634_n.jpg';
 
 export const galleryImages: GalleryImage[] = [
     { publicId: "aida-public/AB6AXuDdtdpahG3zejuxt18iw6BOwhfeJGYXvUlQ-yYmA57k2hyNCPN6gFDONKTFpLeCOEBmvFcm7SoCJyI-16HAC8YHSK5_qLxxNdfonfruThopQVngd_pOxvIZZzpBWaIYYMzp26BTa2f9jB3EnCCdMmNmLsWrW7ypH9_8KonONUOqS4Q3p0LhLO9qjfAvssSXSiMzQqOSUfTGnRznDyTVazXjZBvtDyrcKmGVf9HcYYWbq38-Xyi-bLZ5lPbjSinnhwDowwQ6rQe2c", alt: "Team members collaborating during a launch event" },
@@ -17,11 +18,11 @@ export const galleryImages: GalleryImage[] = [
 
 export const timelineEvents: TimelineEvent[] = [
     {
-        date: "Tháng 1, 2020",
+        date: "Tháng 5, 2023",
         title: "Khởi Đầu Tình Cờ",
-        description: "Mọi thứ bắt đầu từ một buổi cà phê ngẫu hứng. Những con người có cùng \"tần số\" đã tìm thấy nhau và một ý tưởng lớn bắt đầu nhen nhóm.",
-        publicId: "aida-public/AB6AXuAMkCAthVZKAGKOLjhBYut2pSUrlRWNpA9JInEOQIh333pd97mg8ocaCgmBE2DqQWtgrAaqJ7s8eijvXLF36Om3Gg9tSgO0hSJUkN6ybk8lCpVBwXLgrqDKtOlNDKezmcxU-y7_BtTR23ojp4sDPfVNaaKOMYKlgy6YFjs1FeIeH84uxrpQP81aGrc7IM2LPCNoYXu0E7jCZlV_U5Gu8F828pNH6QoOdssOvNLk_3Pgtr9uvK3eRjFUPp1wS3RwLwrfRhqSFcrZWqI",
-        imgAlt: "People collaborating around a table with laptops"
+        description: "Mọi thứ bắt đầu từ một buổi đi xin việc trên 189 Hoàng Cầu. Những con người có cùng \"tần số\" đã xin việc cùng nhau và gặp nhau, và mọi chuyện bắt đầu.",
+        publicId: timeline0,
+        imgAlt: "The first photo of the group"
     },
     {
         date: "Tháng 5, 2021",

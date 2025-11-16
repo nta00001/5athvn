@@ -60,12 +60,12 @@ const Header: React.FC<HeaderProps> = ({ variant, activePage }) => {
                 </div>
             </header>
             {isMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-background-light dark:bg-background-dark md:hidden">
+                <div className={`fixed inset-0 z-40 md:hidden ${isTransparent ? 'bg-transparent' : 'bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm'}`}>
                     <div className="flex flex-col items-center justify-center h-full gap-8">
                         <nav className="flex flex-col items-center gap-8">
-                            <NavItem to="/home" pageName="home" activePage={activePage} baseTextColor="text-gray-600 dark:text-gray-300" activeTextColor="text-primary-story" isMobile onClick={toggleMenu}>Trang chủ</NavItem>
-                            <NavItem to="/gallery" pageName="gallery" activePage={activePage} baseTextColor="text-gray-600 dark:text-gray-300" activeTextColor="text-primary-story" isMobile onClick={toggleMenu}>Xem ảnh</NavItem>
-                            <NavItem to="/story" pageName="story" activePage={activePage} baseTextColor="text-gray-600 dark:text-gray-300" activeTextColor="text-primary-story" isMobile onClick={toggleMenu}>Câu chuyện</NavItem>
+                            <NavItem to="/home" pageName="home" activePage={activePage} baseTextColor={navTextColor} activeTextColor={activeTextColor} isMobile onClick={toggleMenu}>Trang chủ</NavItem>
+                            <NavItem to="/gallery" pageName="gallery" activePage={activePage} baseTextColor={navTextColor} activeTextColor={activeTextColor} isMobile onClick={toggleMenu}>Xem ảnh</NavItem>
+                            <NavItem to="/story" pageName="story" activePage={activePage} baseTextColor={navTextColor} activeTextColor={activeTextColor} isMobile onClick={toggleMenu}>Câu chuyện</NavItem>
                         </nav>
                     </div>
                 </div>

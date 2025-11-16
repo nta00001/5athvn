@@ -18,9 +18,7 @@ const Footer: React.FC<FooterProps> = ({ variant }) => {
                             <p className="text-sm font-medium">© 2024 5ATHVN. All rights reserved.</p>
                         </div>
                         <div className="flex items-center gap-4">
-                            <a className="hover:opacity-80 transition-opacity" href="#">Facebook</a>
-                            <a className="hover:opacity-80 transition-opacity" href="#">Twitter</a>
-                            <a className="hover:opacity-80 transition-opacity" href="#">Instagram</a>
+                            <a className="hover:opacity-80 transition-opacity" href="https://www.instagram.com/ncnkbgbt/">Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -37,9 +35,7 @@ const Footer: React.FC<FooterProps> = ({ variant }) => {
                         <span className="text-sm text-gray-600 dark:text-gray-400">© 2024 5ATHVN. All rights reserved.</span>
                     </div>
                     <div className="flex items-center gap-4">
-                        <a className="text-gray-500 dark:text-gray-400 hover:text-primary-story dark:hover:text-primary-story transition-colors" href="#">Facebook</a>
-                        <a className="text-gray-500 dark:text-gray-400 hover:text-primary-story dark:hover:text-primary-story transition-colors" href="#">Instagram</a>
-                        <a className="text-gray-500 dark:text-gray-400 hover:text-primary-story dark:hover:text-primary-story transition-colors" href="#">Youtube</a>
+                        <a className="text-gray-500 dark:text-gray-400 hover:text-primary-story dark:hover:text-primary-story transition-colors" href="https://www.instagram.com/ncnkbgbt/">Instagram</a>
                     </div>
                 </div>
             </div>

@@ -6,11 +6,17 @@ import { AdvancedImage } from '@cloudinary/react';
 import { useCloudinary } from '../components/CloudinaryProvider';
 import type { GalleryImage } from '../types';
 
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
 const GalleryPage: React.FC = () => {
     const { cloudinary } = useCloudinary();
     const [images, setImages] = useState<GalleryImage[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+
+    const [open, setOpen] = useState(false);
+    const [index, setIndex] = useState(0);
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -34,6 +40,15 @@ const GalleryPage: React.FC = () => {
         fetchImages();
     }, []);
 
+    const slides = images.map((image) => ({
+        src: cloudinary.image(image.public_id).toURL(),
+    }));
+
+    const openLightbox = (imageIndex: number) => {
+        setIndex(imageIndex);
+        setOpen(true);
+    };
+
     return (
         <div className="relative flex min-h-screen w-full flex-col text-[#111618] dark:text-gray-200">
             <Header variant="opaque" activePage="gallery" />
@@ -49,8 +64,8 @@ const GalleryPage: React.FC = () => {
                     
                     {!loading && !error && (
                         <div className="masonry-grid">
-                            {images.map((image) => (
-                                <div key={image.public_id}>
+                            {images.map((image, idx) => (
+                                <div key={image.public_id} onClick={() => openLightbox(idx)} className="cursor-pointer">
                                     <AdvancedImage cldImg={cloudinary.image(image.public_id)} alt={image.alt || 'Gallery image'} className="rounded-xl w-full h-auto object-cover" />
                                 </div>
                             ))}
@@ -59,6 +74,13 @@ const GalleryPage: React.FC = () => {
                 </div>
             </main>
             <Footer variant="default" />
+
+            <Lightbox
+                open={open}
+                close={() => setOpen(false)}
+                index={index}
+                slides={slides}
+            />
         </div>
     );
 };

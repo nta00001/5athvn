@@ -41,7 +41,7 @@ const HomePage: React.FC = () => {
                                 <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Hành Trình Của Chúng Ta</h2>
                                 <p className="text-subtext-light dark:text-subtext-dark text-base sm:text-lg leading-relaxed max-w-2xl">Mỗi khoảnh khắc là một mảnh ghép tạo nên câu chuyện đầy màu sắc của 5ATHVN. Cùng lật lại những trang ký ức đẹp nhất nhé!</p>
                             </div>
-                            <Link to="/gallery" className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-accent text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+                            <Link to="/gallery" className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-base font-bold leading-normal tracking-[0.015em] hover:from-blue-600 hover:to-blue-800 transition-colors">
                                 <span className="material-symbols-outlined mr-2">photo_library</span>
                                 <span className="truncate">Xem kỷ niệm</span>
                             </Link>

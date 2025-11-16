@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ variant, activePage }) => {
             <header className={headerClasses}>
                 <div className="max-w-7xl mx-auto">
                     <div className="flex items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 py-4 h-16">
-                        <NavLink className="flex items-center gap-3" to="/">
+                        <NavLink className="flex items-center gap-3" to="/home">
                             <div className={isMenuOpen ? 'text-primary-story' : logoTextColor}>
                                 <Logo />
                             </div>
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ variant, activePage }) => {
                         </NavLink>
                         <div className="hidden md:flex flex-1 justify-end items-center gap-8">
                             <nav className="flex items-center gap-9">
-                                <NavItem to="/" pageName="home" activePage={activePage} baseTextColor={navTextColor} activeTextColor={activeTextColor}>Trang chủ</NavItem>
+                                <NavItem to="/home" pageName="home" activePage={activePage} baseTextColor={navTextColor} activeTextColor={activeTextColor}>Trang chủ</NavItem>
                                 <NavItem to="/gallery" pageName="gallery" activePage={activePage} baseTextColor={navTextColor} activeTextColor={activeTextColor}>Xem ảnh</NavItem>
                                 <NavItem to="/story" pageName="story" activePage={activePage} baseTextColor={navTextColor} activeTextColor={activeTextColor}>Câu chuyện</NavItem>
                             </nav>
@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ variant, activePage }) => {
                 <div className="fixed inset-0 z-40 bg-background-light dark:bg-background-dark md:hidden">
                     <div className="flex flex-col items-center justify-center h-full gap-8">
                         <nav className="flex flex-col items-center gap-8">
-                            <NavItem to="/" pageName="home" activePage={activePage} baseTextColor="text-gray-600 dark:text-gray-300" activeTextColor="text-primary-story" isMobile onClick={toggleMenu}>Trang chủ</NavItem>
+                            <NavItem to="/home" pageName="home" activePage={activePage} baseTextColor="text-gray-600 dark:text-gray-300" activeTextColor="text-primary-story" isMobile onClick={toggleMenu}>Trang chủ</NavItem>
                             <NavItem to="/gallery" pageName="gallery" activePage={activePage} baseTextColor="text-gray-600 dark:text-gray-300" activeTextColor="text-primary-story" isMobile onClick={toggleMenu}>Xem ảnh</NavItem>
                             <NavItem to="/story" pageName="story" activePage={activePage} baseTextColor="text-gray-600 dark:text-gray-300" activeTextColor="text-primary-story" isMobile onClick={toggleMenu}>Câu chuyện</NavItem>
                         </nav>

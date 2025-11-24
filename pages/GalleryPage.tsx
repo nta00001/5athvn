@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -54,7 +53,9 @@ const GalleryPage: React.FC = () => {
                     throw new Error(`Failed to fetch: ${res.statusText}`);
                 }
                 const data = await res.json();
-                setImages(data.images);
+                // Revert to original behavior: showing latest images by reversing the array.
+                // Assuming the API returns images in chronological order.
+                setImages(data.images.reverse());
                 setError(null);
             } catch (err: any) {
                 setError(err.message);
